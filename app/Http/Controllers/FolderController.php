@@ -46,7 +46,7 @@ class FolderController extends Controller
 
     public function update(FolderRequest $request)
     {
-    	$folder = Todos::findOrFail($request->folder_id);
+    	$folder = TaskStatuses::findOrFail($request->folder_id);
         if ($folder->user_id != Auth::id()) {
             return redirect()->route('folder.index');
         }
